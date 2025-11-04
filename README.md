@@ -16,7 +16,7 @@ Una aplicación ASP.NET MVC + Web API para gestionar información de personas, t
 ```bash
 git clone https://github.com/andresveleze31/personaapi-net.git
 # Para acceder a la carpeta del proyecto
-cd personapi-dotnet
+cd personaapi-net
 # Para acceder a la carpeta del código
 cd personapi_dotnet
 ```
