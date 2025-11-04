@@ -1,0 +1,101 @@
+﻿@model personapi_dotne.Models.Entities.Estudio
+
+@{
+    ViewData["Title"] = "Crear Estudio";
+}
+
+<style>
+    .form-box {
+        background: #fff;
+        border-radius: 8px;
+        padding: 40px;
+        width: 600px;
+        margin: 50px auto;
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+        color: #1e3a5f;
+        margin-bottom: 25px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: #333;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 18px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 10px 18px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .btn-primary {
+        background-color: #1e3a5f;
+        color: white;
+    }
+
+    .btn-secondary {
+        background-color: #ccc;
+        color: #222;
+    }
+
+    .btn-primary:hover {
+        background-color: #2c4f7e;
+    }
+
+    .btn-secondary:hover {
+        background-color: #b1b1b1;
+    }
+
+    .actions {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .text-danger {
+        color: #c0392b;
+        font-size: 14px;
+    }
+</style>
+
+<div class="form-box">
+    <h1>Crear Estudio</h1>
+
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <label asp-for="IdProf">Profesión</label>
+        <select asp-for="IdProf" asp-items="ViewBag.IdProf"></select>
+        <span asp-validation-for="IdProf" class="text-danger"></span>
+
+        <label asp-for="CcPer">Persona</label>
+        <select asp-for="CcPer" asp-items="ViewBag.CcPer"></select>
+        <span asp-validation-for="CcPer" class="text-danger"></span>
+
+        <label asp-for="Fecha">Fecha</label>
+        <input asp-for="Fecha" type="date" />
+        <span asp-validation-for="Fecha" class="text-danger"></span>
+
+        <label asp-for="Univer">Universidad</label>
+        <input asp-for="Univer" />
+        <span asp-validation-for="Univer" class="text-danger"></span>
+
+        <div class="actions">
+            <button type="submit" class="btn-primary">Guardar</button>
+            <a asp-action="Index" class="btn-secondary">Volver</a>
+        </div>
+    </form>
+</div>

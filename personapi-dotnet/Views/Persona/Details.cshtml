@@ -1,0 +1,20 @@
+@model personapi_dotne.Models.Entities.Persona
+@{
+    ViewData["Title"] = "Detalles de Persona";
+}
+
+<section style="max-width:600px;margin:40px auto;padding:30px;background:#fefefe;border:1px solid #ddd;border-radius:12px;">
+    <h2 style="text-align:center;color:#009688;">Detalles del Registro</h2>
+    <div style="margin-top:25px;">
+        <p><strong>Cédula:</strong> @Model.Cc</p>
+        <p><strong>Nombre:</strong> @Model.Nombre</p>
+        <p><strong>Apellido:</strong> @Model.Apellido</p>
+        <p><strong>Género:</strong> @Model.Genero</p>
+        <p><strong>Edad:</strong> @Model.Edad</p>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;margin-top:20px;">
+        <a asp-action="Edit" asp-route-id="@Model.Cc" style="background:#009688;color:white;text-decoration:none;padding:10px 25px;border-radius:10px;">Editar</a>
+        <a asp-action="Index" style="background:#ccc;color:black;text-decoration:none;padding:10px 25px;border-radius:10px;">Volver</a>
+    </div>
+</section>

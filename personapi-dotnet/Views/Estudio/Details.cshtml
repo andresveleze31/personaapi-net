@@ -1,0 +1,21 @@
+﻿@model personapi_dotne.Models.Entities.Estudio
+
+@{
+    ViewData["Title"] = "Detalles de Estudio";
+}
+
+<div class="form-box">
+    <h1 style="color:#226a92;">Detalles de Estudio</h1>
+
+    <dl>
+        <dt>Fecha:</dt> <dd>@Model.Fecha</dd>
+        <dt>Universidad:</dt> <dd>@Model.Univer</dd>
+        <dt>Cédula Persona:</dt> <dd>@Model.CcPerNavigation?.Cc</dd>
+        <dt>ID Profesión:</dt> <dd>@Model.IdProfNavigation?.Id</dd>
+    </dl>
+
+    <div class="actions">
+        <a asp-action="Edit" asp-route-idProf="@Model.IdProf" asp-route-ccPer="@Model.CcPer" class="btn-primary">Editar</a>
+        <a asp-action="Index" class="btn-secondary">Volver</a>
+    </div>
+</div>

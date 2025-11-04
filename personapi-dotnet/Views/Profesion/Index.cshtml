@@ -1,0 +1,36 @@
+@model IEnumerable<personapi_dotne.Models.Entities.Profesion>
+
+@{
+    ViewData["Title"] = "Gestión de Profesiones";
+}
+
+<section style="background:#f8fafc; padding:2rem; border-radius:1rem; max-width:1000px; margin:auto;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+        <h2 style="color:#0d6efd;">📋 Lista de Profesiones</h2>
+        <a asp-action="Create" style="background:#198754; color:white; text-decoration:none; padding:0.6rem 1rem; border-radius:0.5rem;">➕ Nueva</a>
+    </div>
+
+    <table style="width:100%; border-collapse:collapse; background:white; border-radius:0.5rem; overflow:hidden;">
+        <thead style="background:#0d6efd; color:white;">
+            <tr>
+                <th style="padding:0.8rem;">Nombre</th>
+                <th style="padding:0.8rem;">Descripción</th>
+                <th style="padding:0.8rem; text-align:center;">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr style="border-bottom:1px solid #e5e7eb;">
+                    <td style="padding:0.8rem;">@item.Nom</td>
+                    <td style="padding:0.8rem;">@item.Des</td>
+                    <td style="padding:0.8rem; text-align:center;">
+                        <a asp-action="Edit" asp-route-id="@item.Id" style="color:#0d6efd; margin-right:8px; text-decoration:none;">✏️</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" style="color:#0dcaf0; margin-right:8px; text-decoration:none;">👁️</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" style="color:#dc3545; text-decoration:none;">🗑️</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>

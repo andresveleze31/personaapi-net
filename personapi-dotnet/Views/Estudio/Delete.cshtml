@@ -1,0 +1,28 @@
+﻿@model personapi_dotne.Models.Entities.Estudio
+
+@{
+    ViewData["Title"] = "Eliminar Estudio";
+}
+
+<div class="form-box">
+    <h1 style="color:#b82323;">Eliminar Estudio</h1>
+    <p style="background:#fff3cd; padding:12px; border-radius:6px; color:#856404;">
+        ¿Estás seguro de que deseas eliminar este estudio?
+    </p>
+
+    <dl>
+        <dt>Fecha:</dt> <dd>@Model.Fecha</dd>
+        <dt>Universidad:</dt> <dd>@Model.Univer</dd>
+        <dt>Cédula Persona:</dt> <dd>@Model.CcPerNavigation?.Cc</dd>
+        <dt>ID Profesión:</dt> <dd>@Model.IdProfNavigation?.Id</dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdProf" />
+        <input type="hidden" asp-for="CcPer" />
+        <div class="actions">
+            <button type="submit" class="btn-primary" style="background:#b82323;">Eliminar</button>
+            <a asp-action="Index" class="btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>

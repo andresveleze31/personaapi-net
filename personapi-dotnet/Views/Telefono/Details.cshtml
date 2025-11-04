@@ -1,0 +1,20 @@
+@model personapi_dotne.Models.Entities.Telefono
+
+@{
+    ViewData["Title"] = "Detalles del Teléfono";
+}
+
+<section style="background:#eef2ff; padding:2rem; border-radius:1rem; max-width:800px; margin:auto;">
+    <h2 style="text-align:center; color:#1e40af;">📘 Detalles del Teléfono</h2>
+
+    <div style="background:white; padding:1.5rem; border-radius:0.5rem; margin-top:1rem;">
+        <p><strong>Número:</strong> @Model.Num</p>
+        <p><strong>Operador:</strong> @Model.Oper</p>
+        <p><strong>Dueño:</strong> @Model.Duenio</p>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; margin-top:1.5rem;">
+        <a asp-action="Edit" asp-route-num="@Model.Num" style="background:#2563eb; color:white; padding:0.6rem 1.2rem; border-radius:0.5rem; text-decoration:none;">✏️ Editar</a>
+        <a asp-action="Index" style="background:#6b7280; color:white; padding:0.6rem 1.2rem; border-radius:0.5rem; text-decoration:none;">↩️ Volver</a>
+    </div>
+</section>

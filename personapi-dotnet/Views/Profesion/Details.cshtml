@@ -1,0 +1,19 @@
+@model personapi_dotne.Models.Entities.Profesion
+
+@{
+    ViewData["Title"] = "Detalles de la Profesión";
+}
+
+<section style="background:#eef2ff; padding:2rem; border-radius:1rem; max-width:800px; margin:auto;">
+    <h2 style="color:#3b82f6; text-align:center;">📘 Detalles de la Profesión</h2>
+
+    <div style="background:white; border-radius:0.5rem; padding:1.5rem; margin-top:1rem;">
+        <p><strong>Nombre:</strong> <span>@Model.Nom</span></p>
+        <p><strong>Descripción:</strong> <span>@Model.Des</span></p>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; margin-top:1.5rem;">
+        <a asp-action="Edit" asp-route-id="@Model.Id" style="background:#0d6efd; color:white; padding:0.6rem 1.2rem; border-radius:0.5rem; text-decoration:none;">✏️ Editar</a>
+        <a asp-action="Index" style="background:#6c757d; color:white; padding:0.6rem 1.2rem; border-radius:0.5rem; text-decoration:none;">↩️ Volver</a>
+    </div>
+</section>

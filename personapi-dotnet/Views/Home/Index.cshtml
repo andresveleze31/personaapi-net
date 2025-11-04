@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<style>
+    body {
+        background-color: #f0f2f5;
+        font-family: "Segoe UI", Arial, sans-serif;
+        color: #222;
+        margin: 0;
+        padding: 0;
+    }
+
+    .main-container {
+        width: 800px;
+        margin: 80px auto;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 50px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 26px;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    p {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 40px;
+    }
+
+    .options {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    .menu-btn {
+        flex: 1;
+        padding: 18px;
+        background-color: #e6ebf0;
+        color: #2c3e50;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 500;
+        transition: all 0.2s ease-in-out;
+        border: 1px solid #d0d6dc;
+    }
+
+    .menu-btn:hover {
+        background-color: #cfd8e3;
+        transform: scale(1.03);
+    }
+</style>
+
+<div class="main-container">
+    <h1>Panel de Administración</h1>
+    <p>Selecciona una opción para gestionar la información del sistema.</p>
+
+    <div class="options">
+        <a class="menu-btn" asp-controller="Persona" asp-action="Index">Personas</a>
+        <a class="menu-btn" asp-controller="Estudio" asp-action="Index">Estudios</a>
+        <a class="menu-btn" asp-controller="Telefono" asp-action="Index">Teléfonos</a>
+        <a class="menu-btn" asp-controller="Profesion" asp-action="Index">Profesiones</a>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+@model personapi_dotne.Models.Entities.Persona
+@{
+    ViewData["Title"] = "Nueva Persona";
+}
+
+<section style="max-width:700px;margin:40px auto;padding:30px;background:#f9f9f9;border:2px solid #ececec;border-radius:18px;box-shadow:0 5px 20px rgba(0,0,0,0.08);">
+    <h2 style="color:#004aad;text-align:center;margin-bottom:25px;font-weight:700;">Registrar Persona</h2>
+
+    <form asp-action="Create" style="display:flex;flex-direction:column;gap:20px;">
+        <div>
+            <label asp-for="Cc" style="font-weight:600;">Cédula</label>
+            <input asp-for="Cc" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:10px;" />
+            <span asp-validation-for="Cc" style="color:red;font-size:14px;"></span>
+        </div>
+
+        <div>
+            <label asp-for="Nombre" style="font-weight:600;">Nombre</label>
+            <input asp-for="Nombre" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:10px;" />
+        </div>
+
+        <div>
+            <label asp-for="Apellido" style="font-weight:600;">Apellido</label>
+            <input asp-for="Apellido" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:10px;" />
+        </div>
+
+        <div>
+            <label asp-for="Genero" style="font-weight:600;">Género</label>
+            <input asp-for="Genero" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:10px;" />
+        </div>
+
+        <div>
+            <label asp-for="Edad" style="font-weight:600;">Edad</label>
+            <input asp-for="Edad" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:10px;" />
+        </div>
+
+        <div style="display:flex;justify-content:space-between;margin-top:10px;">
+            <button type="submit" style="background:#004aad;color:white;border:none;padding:10px 25px;border-radius:10px;">Guardar</button>
+            <a asp-action="Index" style="background:#ddd;color:#333;text-decoration:none;padding:10px 25px;border-radius:10px;">Volver</a>
+        </div>
+    </form>
+</section>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

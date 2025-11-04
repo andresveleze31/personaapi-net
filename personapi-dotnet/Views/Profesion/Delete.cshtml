@@ -1,0 +1,21 @@
+@model personapi_dotne.Models.Entities.Profesion
+
+@{
+    ViewData["Title"] = "Eliminar Profesión";
+}
+
+<section style="background-color:#fff0f0; padding:2rem; border-radius:1rem; max-width:700px; margin:auto; border:2px solid #ff6b6b;">
+    <h2 style="color:#dc3545; text-align:center;">❌ Eliminar Profesión</h2>
+    <p style="text-align:center;">¿Seguro que deseas eliminar esta profesión?</p>
+
+    <div style="background:#fff; padding:1.5rem; border-radius:0.5rem; margin-top:1rem;">
+        <p><strong>Nombre:</strong> @Model.Nom</p>
+        <p><strong>Descripción:</strong> @Model.Des</p>
+    </div>
+
+    <form asp-action="Delete" style="display:flex; justify-content:space-between; margin-top:1.5rem;">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" style="background:#dc3545; color:white; border:none; padding:0.7rem 1.5rem; border-radius:0.5rem;">Eliminar</button>
+        <a asp-action="Index" style="background:#6c757d; color:white; text-decoration:none; padding:0.7rem 1.5rem; border-radius:0.5rem;">Cancelar</a>
+    </form>
+</section>

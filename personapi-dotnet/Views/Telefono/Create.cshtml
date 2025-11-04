@@ -1,0 +1,40 @@
+@model personapi_dotne.Models.Entities.Telefono
+
+@{
+    ViewData["Title"] = "Agregar Teléfono";
+}
+
+<section style="background:#f7f9fc; padding:2rem; border-radius:1rem; max-width:800px; margin:auto; box-shadow:0 0 10px rgba(0,0,0,0.1);">
+    <h2 style="text-align:center; color:#2563eb;">📞 Nuevo Teléfono</h2>
+
+    <form asp-action="Create" style="display:flex; flex-direction:column; gap:1rem; margin-top:1.5rem;">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div>
+            <label asp-for="Num" style="font-weight:600;">Número:</label><br>
+            <input asp-for="Num" style="width:100%; padding:0.6rem; border:1px solid #ccc; border-radius:0.4rem;">
+            <span asp-validation-for="Num" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="Oper" style="font-weight:600;">Operador:</label><br>
+            <input asp-for="Oper" style="width:100%; padding:0.6rem; border:1px solid #ccc; border-radius:0.4rem;">
+            <span asp-validation-for="Oper" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="Duenio" style="font-weight:600;">Dueño:</label><br>
+            <select asp-for="Duenio" asp-items="ViewBag.Duenio" style="width:100%; padding:0.6rem; border:1px solid #ccc; border-radius:0.4rem;"></select>
+            <span asp-validation-for="Duenio" class="text-danger"></span>
+        </div>
+
+        <div style="display:flex; justify-content:space-between;">
+            <button type="submit" style="background:#2563eb; color:white; border:none; padding:0.6rem 1.2rem; border-radius:0.4rem;">💾 Guardar</button>
+            <a asp-action="Index" style="background:#6b7280; color:white; text-decoration:none; padding:0.6rem 1.2rem; border-radius:0.4rem;">↩️ Volver</a>
+        </div>
+    </form>
+</section>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

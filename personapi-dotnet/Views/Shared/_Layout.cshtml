@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - PersonAPI</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #222;
+        }
+
+        /* ─── NAVBAR ─────────────────────────────── */
+        header {
+            background-color: #1e3a5f;
+            color: white;
+            padding: 15px 60px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            font-weight: bold;
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: opacity 0.2s ease-in-out;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        /* ─── MAIN CONTENT ───────────────────────── */
+        main {
+            width: 900px;
+            margin: 50px auto 100px auto;
+            min-height: 60vh;
+        }
+
+        /* ─── FOOTER ─────────────────────────────── */
+        footer {
+            background-color: #e9ecef;
+            border-top: 1px solid #d1d5da;
+            text-align: center;
+            padding: 15px 0;
+            color: #555;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #1e3a5f;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a class="brand" asp-controller="Home" asp-action="Index">PersonAPI</a>
+            <div class="nav-links">
+                <a asp-controller="Home" asp-action="Index">Inicio</a>
+                <a asp-controller="Persona" asp-action="Index">Personas</a>
+                <a asp-controller="Estudio" asp-action="Index">Estudios</a>
+                <a asp-controller="Telefono" asp-action="Index">Teléfonos</a>
+                <a asp-controller="Profesion" asp-action="Index">Profesiones</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

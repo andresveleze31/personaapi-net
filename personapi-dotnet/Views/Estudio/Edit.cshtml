@@ -1,0 +1,27 @@
+﻿@model personapi_dotne.Models.Entities.Estudio
+
+@{
+    ViewData["Title"] = "Editar Estudio";
+}
+
+<div class="form-box">
+    <h1 style="color:#d47d17;">Editar Estudio</h1>
+
+    <form asp-action="Edit">
+        <input type="hidden" asp-for="IdProf" />
+        <input type="hidden" asp-for="CcPer" />
+
+        <label asp-for="Fecha">Fecha</label>
+        <input asp-for="Fecha" type="date" />
+        <span asp-validation-for="Fecha" class="text-danger"></span>
+
+        <label asp-for="Univer">Universidad</label>
+        <input asp-for="Univer" />
+        <span asp-validation-for="Univer" class="text-danger"></span>
+
+        <div class="actions">
+            <button type="submit" class="btn-primary">Guardar</button>
+            <a asp-action="Index" class="btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>

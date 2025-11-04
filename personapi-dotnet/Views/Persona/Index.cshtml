@@ -1,0 +1,41 @@
+@model IEnumerable<personapi_dotne.Models.Entities.Persona>
+@{
+    ViewData["Title"] = "Listado de Personas";
+}
+
+<section style="max-width:1000px;margin:50px auto;padding:25px;background:#f8faff;border-radius:18px;border:2px solid #e0e6f6;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:25px;">
+        <h2 style="color:#1e40af;font-weight:700;">Personas Registradas</h2>
+        <a asp-action="Create" style="background:#1e40af;color:white;padding:10px 25px;border-radius:10px;text-decoration:none;">➕ Nueva Persona</a>
+    </div>
+
+    <table style="width:100%;border-collapse:collapse;">
+        <thead style="background:#1e3a8a;color:white;">
+            <tr>
+                <th style="padding:10px;">Cédula</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Género</th>
+                <th>Edad</th>
+                <th style="width:160px;">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr style="border-bottom:1px solid #ccc;text-align:center;">
+                    <td>@p.Cc</td>
+                    <td>@p.Nombre</td>
+                    <td>@p.Apellido</td>
+                    <td>@p.Genero</td>
+                    <td>@p.Edad</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@p.Cc" style="color:#2563eb;text-decoration:none;margin-right:8px;">✏️</a>
+                        <a asp-action="Details" asp-route-id="@p.Cc" style="color:#059669;text-decoration:none;margin-right:8px;">👁️</a>
+                        <a asp-action="Delete" asp-route-id="@p.Cc" style="color:#dc2626;text-decoration:none;">🗑️</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>

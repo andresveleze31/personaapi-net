@@ -1,0 +1,108 @@
+﻿@model IEnumerable<personapi_dotne.Models.Entities.Estudio>
+
+@{
+    ViewData["Title"] = "Gestión de Estudios";
+}
+
+<style>
+    body {
+        background-color: #f4f6f8;
+        font-family: "Segoe UI", Arial, sans-serif;
+        color: #222;
+    }
+
+    h2 {
+        color: #1e3a5f;
+        margin-bottom: 20px;
+    }
+
+    .actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .btn {
+        background-color: #1e3a5f;
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 5px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.2s ease-in-out;
+    }
+
+    .btn:hover {
+        background-color: #2d4f7c;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    }
+
+    th, td {
+        border-bottom: 1px solid #e5e7eb;
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        background: #f0f3f7;
+        color: #1e3a5f;
+    }
+
+    tr:hover {
+        background-color: #f9fafc;
+    }
+
+    .table-actions a {
+        margin-right: 8px;
+        text-decoration: none;
+        color: #1e3a5f;
+        font-weight: bold;
+    }
+
+    .table-actions a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<div class="actions">
+    <h2>Listado de Estudios</h2>
+    <a asp-action="Create" class="btn">Nuevo Estudio</a>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Universidad</th>
+            <th>Cédula Persona</th>
+            <th>ID Profesión</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Fecha?.ToShortDateString()</td>
+                <td>@item.Univer</td>
+                <td>@item.CcPerNavigation?.Cc</td>
+                <td>@item.IdProfNavigation?.Id</td>
+                <td class="table-actions">
+                    <a asp-action="Edit" asp-route-idProf="@item.IdProf" asp-route-ccPer="@item.CcPer">Editar</a>
+                    <a asp-action="Details" asp-route-idProf="@item.IdProf" asp-route-ccPer="@item.CcPer">Ver</a>
+                    <a asp-action="Delete" asp-route-idProf="@item.IdProf" asp-route-ccPer="@item.CcPer" style="color:#c0392b;">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

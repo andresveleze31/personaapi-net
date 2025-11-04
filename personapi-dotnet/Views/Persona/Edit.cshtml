@@ -1,0 +1,41 @@
+@model personapi_dotne.Models.Entities.Persona
+@{
+    ViewData["Title"] = "Editar Persona";
+}
+
+<section style="max-width:700px;margin:40px auto;padding:30px;background:#fff;border:2px solid #e8e8e8;border-radius:15px;">
+    <h2 style="text-align:center;color:#f57c00;">Editar Datos</h2>
+
+    <form asp-action="Edit" style="display:flex;flex-direction:column;gap:18px;margin-top:20px;">
+        <input type="hidden" asp-for="Cc" />
+
+        <div>
+            <label asp-for="Nombre" style="font-weight:600;">Nombre</label>
+            <input asp-for="Nombre" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:8px;" />
+        </div>
+
+        <div>
+            <label asp-for="Apellido" style="font-weight:600;">Apellido</label>
+            <input asp-for="Apellido" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:8px;" />
+        </div>
+
+        <div>
+            <label asp-for="Genero" style="font-weight:600;">Género</label>
+            <input asp-for="Genero" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:8px;" />
+        </div>
+
+        <div>
+            <label asp-for="Edad" style="font-weight:600;">Edad</label>
+            <input asp-for="Edad" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:8px;" />
+        </div>
+
+        <div style="display:flex;justify-content:space-between;margin-top:10px;">
+            <button type="submit" style="background:#f57c00;color:white;border:none;padding:10px 25px;border-radius:10px;">Guardar</button>
+            <a asp-action="Index" style="background:#ccc;color:black;text-decoration:none;padding:10px 25px;border-radius:10px;">Cancelar</a>
+        </div>
+    </form>
+</section>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
